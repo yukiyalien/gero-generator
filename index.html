@@ -1,0 +1,360 @@
+<!-- 何でこんなもののソースコード観てるんですか -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/嘔吐.png">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="./script.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen and (min-width: 400px) {
+
+            /*ウィンドウ幅が767px以上の場合に適用*/
+            div.page {
+                width: 400px;
+                margin: 0 auto;
+            }
+
+        }
+
+        @media screen and (max-width: 399px) {
+
+            .page {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .modal {
+            text-align: left;
+        }
+
+        header {
+            clear: both;
+            height: 25px;
+            text-align: center;
+            font-size: 0.8em;
+
+            width: 100%;
+            background-color: #811f99;
+            background-image: repeating-linear-gradient(-45deg,
+                    #333333,
+                    #333333 10px,
+                    transparent 0,
+                    transparent 20px);
+        }
+
+        h1 {
+            color: #811f99;
+        }
+
+        div.faq {
+            text-align: left;
+        }
+
+        div.faq>p {
+            font-size: 1.3em;
+            color: #2e3350;
+        }
+
+        iframe.mastodon-embed {
+            margin: 0 auto;
+        }
+
+        p {
+            color: #811f99;
+            font-size: 18px;
+            font-family: 'Sawarabi Gothic'sans-serif;
+        }
+
+        p.discription {
+            color: #2e3350;
+        }
+
+        div.caution {
+            margin-top: 30px;
+        }
+
+        p.caution {
+            color: #2e3350;
+            font-size: 0.9em;
+        }
+
+        p.copyright {
+            color: #888888;
+            font-size: 0.9em;
+        }
+
+        div.form {
+            margin: 0 auto;
+            width: auto;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .btns {
+            margin-top: 20px;
+        }
+
+        .sharebutton {
+            width: 300px;
+            display: block;
+            padding: 0.3em;
+            text-align: right;
+            text-decoration: none;
+            font-family: "Sawarabi Gothic", monospace;
+            border: 3px solid;
+            border-radius: 3px;
+            transition: 0.4s;
+            position: relative;
+            margin-top: 10px;
+            margin: 0 auto;
+        }
+
+        .sharebutton>i {
+            background: transparent !important;
+            position: absolute;
+            top: 60%;
+            left: 5px;
+            margin-top: -0.5em;
+        }
+
+        .sharebutton.twitter {
+            color: #ffffff;
+            background-color: #1da1f2;
+            border-color: #1da1f2;
+        }
+
+        .sharebutton.mastodon {
+            color: #ffffff;
+            border-color: #2b90d9;
+        }
+
+        .sharebutton.bf {
+            background-color: #EE5449;
+            border-color: #EE5449;
+        }
+
+        .sharebutton:hover {
+            border-color: #2e3350;
+            text-decoration: none;
+        }
+
+        .hell {
+            margin-top: 15px;
+            margin-bottom: 0px;
+            color: #1da1f2
+        }
+
+        .hell.twitter {
+            color: #1da1f2
+        }
+
+        .hell.mastodon {
+            color: #2b90d9;
+        }
+
+        a.hell {
+            padding: 0 5px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, #1da1f2 50%);
+            background-position: 0 0;
+            background-size: 200% auto;
+            transition: .3s;
+            text-decoration: none;
+        }
+
+        a.hell>i {
+            margin: 0 5px;
+        }
+
+        a.hell:hover {
+            background-position: -100% 0;
+            color: #fff;
+        }
+
+        i.hell {
+            margin-left: 5px;
+        }
+
+        .faq {
+            padding-top: 30px;
+        }
+
+        p.author {
+            margin-top: 60px;
+
+        }
+
+        footer {
+            margin-top: 100px;
+            clear: both;
+            height: 70px;
+            text-align: center;
+            padding-top: 28px;
+            width: 100%;
+            background-color: #811f99;
+            background-image: repeating-linear-gradient(-45deg,
+                    #333333,
+                    #333333 10px,
+                    transparent 0,
+                    transparent 20px);
+        }
+
+        a.author {
+            color: #811f99;
+        }
+    </style>
+
+    <meta property="og:url" content="https://gero.yukiya.me/" />
+    <meta property="og:title" content="嘔吐マ" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="地獄は2度刺す" />
+
+    <title>嘔吐マ</title>
+</head>
+
+<body>
+
+    <header></header>
+
+    <div class="page">
+        <h1>嘔吐マ</h1>
+        <p class="discription">お手軽に吐瀉物を流せるウェブサイト</p>
+        <div class="form">
+            <p><textarea class="form-control" rows="4" id="copyTarget" onclick="this.select();"
+                    readonly>エ🤮ン🤮ト🤮マ🤮おぇ〜っおぇっおぇオェオェオェオェオェOeOeOeOeおぇっエントマッオェュオェオェﾝ🤮オェッ🤮オェッオェッオェ🤮オェオェﾝ🤮</textarea>
+            </p>
+        </div>
+        <p><button class="btn btn-primary" onclick="copyToClipboard()">コピーする</button></p>
+
+        <script>
+            function copyToClipboard() {
+                var copyTarget = document.getElementById("copyTarget");
+                copyTarget.select();
+                document.execCommand("Copy");
+                alert("コピーしました : " + copyTarget.value);
+            }
+        </script>
+
+        <div class="btns">
+
+            <p><button class="sharebutton mastodon" style="background-color: #2b90d9; color: #ffffff;"
+                    data-toggle="modal" data-target="#share-modal">
+                    <i class="fab fa-mastodon fa-fw fa-lg"></i>Mastodon / Misskey<span style="font-size: 0.8em;">
+                        で投稿</span>
+                </button></p>
+
+            <p><a class="sharebutton bf gero-link" href="http://best-friends.chat/share?text={gero}"
+                    style="background-color: #EE5449; color: #FFFFFF;"
+                    onclick="window.open(this.href, '', 'width=500,height=400'); return false;"><i
+                        class="fab fa-mastodon fa-fw fa-lg"></i>Best Friends<span style="font-size: 0.8em;">
+                        でトゥート</span></a></p>
+
+            <p><a href="https://twitter.com/intent/tweet?text={gero}"
+                    onclick="window.open(this.href, '', 'width=500,height=400'); return false;"
+                    class="sharebutton twitter gero-link">
+                    <i class="fab fa-twitter fa-fw fa-lg"></i>Twitter<span style="font-size: 0.8em;"> でツイート</span>
+                </a></p>
+        </div>
+        <div class="caution">
+            <p class="caution">※節度を持ってお使いください。</p>
+        </div>
+        <p class="hell mastodon"><a href="https://best-friends.chat/tags/%E5%98%94%E5%90%90%E3%83%9E" target="_blank"
+                class="hell"><i class="fab fa-mastodon"></i>ゲロ溜まりを見に行く<i class="fas fa-chevron-circle-right"></i></a>
+        </p>
+        <div class="faq">
+            <h1>FAQ</h1>
+            <p>Q. 嘔吐マってなんですか？</p>
+            <p>A.</p>
+            <p><iframe src="https://best-friends.chat/@waneko/104291142445695159/embed" class="mastodon-embed"
+                    style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe>
+                <script src="https://best-friends.chat/embed.js" async="async"></script>
+            </p>
+            <h1>See Also</h1>
+            <p>→ <a href="https://kyun.yukiya.me" target="_blank">1つ目の地獄</a></p>
+            <p>→ <a href="https://kyun.yukiya.me" target="_blank">@USG@best-friends.chat</a></p>
+        </div>
+
+        <p class="author">A級戦犯:</p>
+        <a href="https://best-friends.chat/@Yukiya" target="_blank" rel="me" class="author"><i
+                class="fab fa-mastodon fa-fw fa-lg"></i></a>
+        <a href="https://twitter.com/yukiyalien" target="_blank" class="author"><i
+                class="fab fa-twitter fa-fw fa-lg"></i></a>
+        <a href="https://yukiya.me/" target="_blank" class="author"><i class="fas fa-home fa-fw fa-lg"></i></a>
+
+
+    </div>
+    <footer>
+        <p class="copyright">&copy;2020 yukiyalien | <a href="https://github.com/yukiyalien/gero-generator"
+                target="_blank">Source Code</a></p>
+    </footer>
+
+    <div class="modal fade" id="share-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Mastodon / Misskeyで投稿</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="server-domain">サーバードメインを入力...</label>
+                    <input type="text" class="form-control" id="server-domain" placeholder="mastodon.social">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-block" onclick="openShare()">開く</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
